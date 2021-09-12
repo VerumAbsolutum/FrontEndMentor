@@ -1,0 +1,262 @@
+/**
+ * @author [VereAbsolutum]
+ * @email [sergiopile3@gmail.com]
+ * @create date 2021-09-12 01:06:57
+ * @modify date 2021-09-12 01:06:57
+ * @desc [description]
+ */
+/** RESET & GLOBAL*/
+/** Base Module */
+:root {
+  /** DIMENSIONS*/
+  /** Mobile*/
+  --width: 330px;
+  --height: 567px;
+  /** Expand */
+  --width-expand: 452px;
+  --height-expand: 698px;
+  /** TYPOGRAPHY */
+  /** Font */
+  --font-family: "Red Hat Display", sans-serif;
+  --font-body: 1rem;
+  --font-title: 1.25rem;
+  --font-title-expand: 1.75rem;
+  --font-black: 900;
+  --font-bold: 700;
+  --font-medium: 500;
+  /** Margins */
+  --m-bottom-1: 0.25rem;
+  --m-bottom-2: 0.5rem;
+  --m-bottom-3: 0.75rem;
+  --m-bottom-4: 1rem;
+  /** COLORS */
+  --pale-blue: rgb(224, 232, 255);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+  /***/
+  --surface: #ffffff;
+  --primary: var(--bright-blue);
+  --secondary: var(--very-pale-blue);
+  --on-primary: var(--very-pale-blue);
+  --on-secondary: var(--desaturated-blue);
+  --on-surface: var(--desaturated-blue);
+  --hover: var(--desaturated-blue);
+  --shadow: var(--pale-blue);
+  --title: var(--dark-blue);
+}
+
+body {
+  font-size: 1rem;
+  margin: 0;
+  font-family: var(--font-family);
+}
+
+/** End Base Module */
+/** COMPONENTS*/
+/** Hero Module */
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: url("/dist/assets/pattern-background-mobile.svg") no-repeat var(--shadow) top;
+  width: 100%;
+  height: 150vh;
+}
+
+.attribution {
+  margin-top: 3rem;
+}
+
+@media (min-width: 375px) {
+  .hero-expand-sm {
+    background: url("/dist/assets/pattern-background-desktop.svg") no-repeat var(--shadow) left -65%;
+  }
+}
+
+/** End Hero Module */
+/** Card Module */
+.card {
+  width: var(--width);
+  height: var(--height);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: var(--surface);
+  border-radius: 20px;
+  position: relative;
+  color: var(--on-surface);
+  font-size: 1rem;
+  font-family: var(--font-family);
+  -webkit-box-shadow: 10px 20px 20px #c9cee4;
+          box-shadow: 10px 20px 20px #c9cee4;
+}
+
+.card__header {
+  margin-bottom: calc(var(--m-bottom-3) * 3);
+  height: 160px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card__header-img {
+  display: inline-block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-start-end-radius: 20px;
+  border-start-start-radius: 20px;
+}
+
+.card__body {
+  padding-inline: 22.5px;
+}
+
+.card__description, .card__title {
+  text-align: center;
+}
+
+.card__title, .card__plan-title {
+  color: var(--title);
+}
+
+.card__plan-title, .card__plan-value {
+  margin: 0;
+}
+
+.card__description, .card__plan-value {
+  color: var(--on-surface);
+}
+
+.card__title, .card__button-proceed, .card__button-cancel, .card__button-change, .card__plan-title {
+  font-weight: var(--font-black);
+}
+
+.card__title {
+  margin-bottom: calc(var(--m-bottom-1) * 5);
+  font-size: var(--font-title);
+}
+
+.card__description {
+  margin-bottom: calc(var(--m-bottom-3) * 2);
+  padding-inline: 1rem;
+}
+
+.card__plan, .card__button-proceed {
+  border-radius: 11px;
+}
+
+.card__plan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: calc(var(--m-bottom-3) * 2);
+  background-color: var(--secondary);
+  padding: 1rem;
+}
+
+.card__plan-img {
+  padding-right: 1rem;
+}
+
+.card__plan-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.card__plan-title {
+  margin-bottom: var(--m-bottom-1);
+}
+
+.card__plan-value {
+  margin-top: 0;
+}
+
+.card__button-change {
+  color: var(--primary);
+}
+
+.card__button-change:hover {
+  color: var(--hover);
+  text-decoration: none;
+}
+
+.card__button-proceed, .card__button-cancel {
+  text-align: center;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.card__button-proceed {
+  margin-bottom: calc(var(--m-bottom-3) * 2);
+  background-color: var(--primary);
+  color: var(--on-primary);
+  padding-block: 17px;
+  border: none;
+  -webkit-box-shadow: 1px 20px 23px var(--shadow);
+          box-shadow: 1px 20px 23px var(--shadow);
+}
+
+.card__button-proceed:hover {
+  background-color: var(--hover);
+}
+
+.card__button-cancel {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+.card__button-cancel:hover {
+  color: var(--title);
+}
+
+/** Expand Mode*/
+@media (min-width: 375px) {
+  .hero-expand-sm .card {
+    width: var(--width-expand);
+    height: var(--height-expand);
+  }
+  .hero-expand-sm .card__body {
+    padding-inline: 3rem;
+  }
+  .hero-expand-sm .card__plan, .hero-expand-sm .card__button-proceed {
+    margin-bottom: calc(var(--m-bottom-4) * 2);
+  }
+  .hero-expand-sm .card__plan {
+    padding: 1.25rem;
+  }
+  .hero-expand-sm .card__title {
+    font-size: var(--font-title-expand);
+    margin-bottom: calc(var(--m-bottom-1) * 5);
+  }
+  .hero-expand-sm .card__header {
+    margin-bottom: calc(var(--m-bottom-2) * 6.5);
+    height: 218px;
+  }
+}
+
+/** End Card Module */
+/*# sourceMappingURL=styles.css.map */
